@@ -11,7 +11,7 @@ public class AppTest {
     @Test
     void testAñadirLibro() {
 
-        GestorDeLibros gestor = new GestorDeLibros();
+        App gestor = new App();
 
         // HashMap que añade ñiros
         Map<String, Map<String, Boolean>> resultado = gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
@@ -24,7 +24,7 @@ public class AppTest {
     // Delete books 
     @Test
     void testEliminarLibro() {
-        GestorDeLibros gestor = new GestorDeLibros();
+        App gestor = new App();
 
         // Añadir un libro
         gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
@@ -39,7 +39,7 @@ public class AppTest {
     //Itinirate books 
     @Test
     void testEnumLibros() {
-        GestorDeLibros gestor = new GestorDeLibros();
+        App gestor = new App();
 
         //add some books here
         gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
@@ -52,7 +52,7 @@ public class AppTest {
     // Test para marcar un libro como leído
     @Test
     void testMarcarLeido() {
-        GestorDeLibros gestor = new GestorDeLibros();
+        App gestor = new App();
 
         // Añadir un libro
         gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
@@ -67,7 +67,7 @@ public class AppTest {
 
     @Test
     void testVerLibrosLeidos() {
-        GestorDeLibros gestor = new GestorDeLibros();
+        App gestor = new App();
         gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
         gestor.añadirLibro("Brandon Sanderso", "StormLigth");
         gestor.marcarLeido("Brandon Sanderso", "Mistbonr");
