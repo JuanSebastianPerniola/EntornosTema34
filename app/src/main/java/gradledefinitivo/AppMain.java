@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class App {
+public class AppMain {
 
     private Map<String, Map<String, Boolean>> biblioteca;
 
-    public App() {
+    public AppMain() {
         this.biblioteca = new HashMap<>();
     }
 
