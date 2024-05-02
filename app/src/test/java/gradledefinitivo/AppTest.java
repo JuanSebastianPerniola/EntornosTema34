@@ -10,12 +10,12 @@ public class AppTest {
 
     // Add books test
     @Test
-    void testAñadirLibro() {
+    void testAnadirLibro() {
 
-        App gestor = new App();
+        AppMain gestor = new AppMain();
 
         // HashMap que añade ñiros
-        Map<String, Map<String, Boolean>> resultado = gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
+        Map<String, Map<String, Boolean>> resultado = gestor.anadirLibro("Brandon Sanderso", "Mistbonr");
         // Libros marcados por defecto como no leidos
         assertTrue(resultado.containsKey("Brandon Sanderso"));
         assertTrue(resultado.get("Brandon Sanderso").containsKey("Mistbonr"));
@@ -25,10 +25,10 @@ public class AppTest {
     // Delete books
     @Test
     void testEliminarLibro() {
-        App gestor = new App();
+        AppMain gestor = new AppMain();
 
         // Añadir un libro
-        gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
+        gestor.anadirLibro("Brandon Sanderso", "Mistbonr");
 
         // Eliminar el libro
         Map<String, Map<String, Boolean>> resultado = gestor.eliminarLibro("Brandon Sanderso", "Mistbonr");
@@ -39,18 +39,18 @@ public class AppTest {
 
     @Test
     void testEnumLibros() {
-        App gestor = new App();
+        AppMain gestor = new AppMain();
 
         // Añadir algunos libros
-        gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
-        gestor.añadirLibro("George R.R. Martin", "A Game of Thrones");
+        gestor.anadirLibro("Brandon Sanderso", "Mistbonr");
+        gestor.anadirLibro("George R.R. Martin", "A Game of Thrones");
 
         // Obtener la lista de libros
         List<String> libros = gestor.enumLibros();
 
         // Crear una lista esperada de libros
-        List<String> librosEsperados = Arrays.asList("Autor : Brandon Sanderso, Titulo : Mistbonr, Leído :false",
-                "Autor : George R.R. Martin, Titulo : A Game of Thrones, Leído :false");
+        List<String> librosEsperados = Arrays.asList("Autor : Brandon Sanderso, Titulo : Mistbonr, Leido :false",
+                "Autor : George R.R. Martin, Titulo : A Game of Thrones, Leido :false");
 
         // Verificar que la lista de libros devuelta sea igual a la lista esperada
         assertEquals(libros, librosEsperados);
@@ -59,10 +59,10 @@ public class AppTest {
     // Test para marcar un libro como leído
     @Test
     void testMarcarLeido() {
-        App gestor = new App();
+        AppMain gestor = new AppMain();
 
         // Añadir un libro
-        gestor.añadirLibro("Brandon Sanderso", "Mistbonr");
+        gestor.anadirLibro("Brandon Sanderso", "Mistbonr");
 
         // Marcar el libro como leído
         boolean resultado = gestor.marcarLeido("Brandon Sanderso", "Mistbonr");
@@ -76,10 +76,10 @@ public class AppTest {
 
     @Test
     void testVerLibrosLeidos() {
-        App gestor = new App();
+        AppMain gestor = new AppMain();
         //Adds books 
-        gestor.añadirLibro("Brandon Sanderson", "Mistbonr");
-        gestor.añadirLibro("Brandon Sands", "StormLigth");
+        gestor.anadirLibro("Brandon Sanderson", "Mistbonr");
+        gestor.anadirLibro("Brandon Sands", "StormLigth");
 
         gestor.marcarLeido("Brandon Sanderson", "Mistbonr");
         gestor.marcarLeido("Brandon Sands", "StormLigth");
